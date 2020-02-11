@@ -46,5 +46,6 @@ int main()
 	printf("Enter a String -");
 	yylex();
 	return 0;
+	exit(0);
 }
 

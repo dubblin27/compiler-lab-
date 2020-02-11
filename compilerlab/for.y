@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+
 %}
 %token ID NUM FOR LE GE EQ NE OR AND
 %right "="
@@ -16,16 +17,10 @@
 S         : ST {printf("Input accepted\n"); exit(0);}
 ST       : FOR '(' E ';' E2 ';' E ')' DEF
            ;
-DEF    : '{' BODY '}'
-           | E';'
-           | ST
-           |
-           ;
+DEF    : '{' BODY '}' | E';'| ST | ;
+
 BODY  : BODY BODY
-           | E ';'       
-           | ST
-           |            
-           ;
+           | E ';'| ST|;
        
 E        : ID '=' E
           | E '+' E
